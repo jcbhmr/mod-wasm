@@ -1,17 +1,10 @@
-module github.com/jcbhmr/mod-wasm
+module go.jcbhmr.com.internal/mod-wasm
 
-go 1.24.5
+go 1.25.0
 
-tool (
-	github.com/jcbhmr/mod-wasm/_scripts/build
-	github.com/jcbhmr/mod-wasm/_scripts/test
-	go.bytecodealliance.org/cmd/wit-bindgen-go
-)
+toolchain go1.26.3
 
-require (
-	go.bytecodealliance.org/cm v0.3.0
-	golang.org/x/mod v0.24.0
-)
+tool go.bytecodealliance.org/cmd/wit-bindgen-go
 
 require (
 	github.com/coreos/go-semver v0.3.1 // indirect
@@ -24,5 +17,7 @@ require (
 	github.com/ulikunitz/xz v0.5.12 // indirect
 	github.com/urfave/cli/v3 v3.3.3 // indirect
 	go.bytecodealliance.org v0.7.0 // indirect
+	go.bytecodealliance.org/cm v0.3.0 // indirect
+	golang.org/x/mod v0.36.0 // indirect
 	golang.org/x/sys v0.33.0 // indirect
 )

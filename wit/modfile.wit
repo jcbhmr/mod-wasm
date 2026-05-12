@@ -1,0 +1,8 @@
+package jcbhmr:mod@0.36.0;
+
+interface modfile {
+    get-go-version-re: func();
+    get-toolchain-re: func();
+
+    auto-quote: func(s: string) -> string;
+}
