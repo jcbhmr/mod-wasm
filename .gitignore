@@ -1,4 +1,4 @@
-wit/deps
+**/wit/deps
 /mod.wasm
 /gosumcheck.wasm
 

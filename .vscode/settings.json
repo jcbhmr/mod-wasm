@@ -1,0 +1,8 @@
+{
+    "go.toolsEnvVars": {
+        "GOOS": "linux",
+        "GOARCH": "arm",
+        "GOROOT": "/home/vscode/.cache/tinygo/goroot-c0b4137386297529b7b2a5292e31f2a8f44d5a1d6730858b66f5331b4944bda5",
+        "GOFLAGS": "-tags=tinygo.wasm,wasip2,tinygo,purego,osusergo,math_big_pure_go,gc.precise,scheduler.asyncify,serial.none,tinygo.unicore"
+    }
+}

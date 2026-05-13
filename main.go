@@ -1,4 +1,4 @@
-//go:generate ./scripts/generate.sh
+//go:build wasip2
 
 package main
 

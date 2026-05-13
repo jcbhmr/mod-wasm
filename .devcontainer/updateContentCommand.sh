@@ -16,3 +16,6 @@ source ~/.bashrc
 
 echo "# Install 'wkg' and 'wasm-tools'"
 cargo binstall --no-confirm wkg wasm-tools
+
+echo "# Install Wasmtime"
+curl https://wasmtime.dev/install.sh -sSf | bash
