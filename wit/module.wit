@@ -1,6 +1,61 @@
 package jcbhmr:mod@0.36.0;
 
 interface module {
+    type error = string;
+    pseudo-version-timestamp-format: func(t: s64) -> string;
+    canonical-version: func(v: string) -> string;
+    check: func(path: string, version: string) -> error;
+    check-file-path: func(path: string) -> error;
+    check-import-path: func(path: string) -> error;
+    check-path: func(path: string) -> error;
+    check-path-major: func(v: string, path-major: string) -> error;
+    escape-path: func(path: string) -> result<string, error>;
+    escape-version: func(v: string) -> result<string, error>;
+    is-pseudo-version: func(v: string) -> bool;
+    is-zero-pseudo-version: func(v: string) -> bool;
+    match-path-major: func(v: string, path-major: string) -> bool;
+    match-prefix-patterns: func(globs: string, target: string) -> bool;
+    path-major-prefix: func(path-major: string) -> string;
+    pseudo-version: func(major: string, older: string, t: s64, rev: string) -> string;
+    pseudo-version-base: func(v: string) -> result<string, error>;
+    pseudo-version-rev: func(v: string) -> result<string, error>;
+    pseudo-version-time: func(v: string) -> result<s64, error>;
+    sort: func(%list: list<version>) -> list<version>;
+    split-path-version: func(path: string) -> option<tuple<string, string>>;
+    unescape-path: func(escaped: string) -> result<string, error>;
+    unescape-version: func(escaped: string) -> result<string, error>;
+    version-error: func(v: version, err: error) -> error;
+    zero-pseudo-version: func(major: string) -> string;
+    resource invalid-path-error {
+        constructor();
+        get-kind: func() -> string;
+        set-kind: func(v: string);
+        get-path: func() -> string;
+        set-path: func(v: string);
+        get-err: func() -> error;
+        error: func() -> string;
+        unwrap: func() -> error;
+    }
+    resource invalid-version-error {
+        constructor();
+        get-version: func() -> string;
+        set-version: func(v: string);
+        get-pseudo: func() -> bool;
+        set-pseudo: func(v: bool);
+        get-err: func() -> error;
+        error: func() -> string;
+        unwrap: func() -> error;
+    }
+    resource module-error {
+        constructor();
+        get-path: func() -> string;
+        set-path: func(v: string);
+        get-version: func() -> string;
+        set-version: func(v: string);
+        get-err: func() -> error;
+        error: func() -> string;
+        unwrap: func() -> error;
+    }
     record version {
         path: string,
         version: string,

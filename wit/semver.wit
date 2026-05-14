@@ -3,4 +3,15 @@ package jcbhmr:mod@0.36.0;
 interface semver {
     build: func(v: string) -> string;
     canonical: func(v: string) -> string;
+    compare: func(v: string, w: string) -> s32;
+    is-valid: func(v: string) -> bool;
+    major: func(v: string) -> string;
+    major-minor: func(v: string) -> string;
+    max: func(v: string, w: string) -> string;
+    prerelease: func(v: string) -> string;
+    sort: func(%list: list<string>) -> list<string>;
+    // type by-version = list<string>;
+    // by-version-len: func(self: list<string>) -> s32;
+    // by-version-less: func(self: list<string>, i: s32, j: s32) -> bool;
+    // by-version-swap: func(self: list<string>, i: s32, j: s32);
 }

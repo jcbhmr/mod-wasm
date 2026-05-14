@@ -25,3 +25,68 @@ func wasmexport_Canonical(v0 *uint8, v1 uint32) (result *string) {
 	result = &result_
 	return
 }
+
+//go:wasmexport jcbhmr:mod/semver@0.36.0#compare
+//export jcbhmr:mod/semver@0.36.0#compare
+func wasmexport_Compare(v0 *uint8, v1 uint32, w0 *uint8, w1 uint32) (result0 uint32) {
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	w := cm.LiftString[string]((*uint8)(w0), (uint32)(w1))
+	result := Exports.Compare(v, w)
+	result0 = (uint32)(result)
+	return
+}
+
+//go:wasmexport jcbhmr:mod/semver@0.36.0#is-valid
+//export jcbhmr:mod/semver@0.36.0#is-valid
+func wasmexport_IsValid(v0 *uint8, v1 uint32) (result0 uint32) {
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	result := Exports.IsValid(v)
+	result0 = (uint32)(cm.BoolToU32(result))
+	return
+}
+
+//go:wasmexport jcbhmr:mod/semver@0.36.0#major
+//export jcbhmr:mod/semver@0.36.0#major
+func wasmexport_Major(v0 *uint8, v1 uint32) (result *string) {
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	result_ := Exports.Major(v)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/semver@0.36.0#major-minor
+//export jcbhmr:mod/semver@0.36.0#major-minor
+func wasmexport_MajorMinor(v0 *uint8, v1 uint32) (result *string) {
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	result_ := Exports.MajorMinor(v)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/semver@0.36.0#max
+//export jcbhmr:mod/semver@0.36.0#max
+func wasmexport_Max(v0 *uint8, v1 uint32, w0 *uint8, w1 uint32) (result *string) {
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	w := cm.LiftString[string]((*uint8)(w0), (uint32)(w1))
+	result_ := Exports.Max(v, w)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/semver@0.36.0#prerelease
+//export jcbhmr:mod/semver@0.36.0#prerelease
+func wasmexport_Prerelease(v0 *uint8, v1 uint32) (result *string) {
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	result_ := Exports.Prerelease(v)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/semver@0.36.0#sort
+//export jcbhmr:mod/semver@0.36.0#sort
+func wasmexport_Sort(list0 *string, list1 uint32) (result *cm.List[string]) {
+	list := cm.LiftList[cm.List[string]]((*string)(list0), (uint32)(list1))
+	result_ := Exports.Sort(list)
+	result = &result_
+	return
+}

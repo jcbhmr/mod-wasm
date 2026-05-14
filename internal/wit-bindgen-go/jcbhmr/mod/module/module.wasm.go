@@ -2,7 +2,508 @@
 
 package module
 
+import (
+	"go.bytecodealliance.org/cm"
+)
+
 // This file contains wasmimport and wasmexport declarations for "jcbhmr:mod@0.36.0".
+
+//go:wasmimport [export]jcbhmr:mod/module@0.36.0 [resource-new]invalid-path-error
+//go:noescape
+func wasmimport_InvalidPathErrorResourceNew(rep0 uint32) (result0 uint32)
+
+//go:wasmimport [export]jcbhmr:mod/module@0.36.0 [resource-rep]invalid-path-error
+//go:noescape
+func wasmimport_InvalidPathErrorResourceRep(self0 uint32) (result0 uint32)
+
+//go:wasmimport [export]jcbhmr:mod/module@0.36.0 [resource-drop]invalid-path-error
+//go:noescape
+func wasmimport_InvalidPathErrorResourceDrop(self0 uint32)
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[dtor]invalid-path-error
+//export jcbhmr:mod/module@0.36.0#[dtor]invalid-path-error
+func wasmexport_InvalidPathErrorDestructor(self0 uint32) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	Exports.InvalidPathError.Destructor(self)
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[constructor]invalid-path-error
+//export jcbhmr:mod/module@0.36.0#[constructor]invalid-path-error
+func wasmexport_Constructor() (result0 uint32) {
+	result := Exports.InvalidPathError.Constructor()
+	result0 = cm.Reinterpret[uint32](result)
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]invalid-path-error.error
+//export jcbhmr:mod/module@0.36.0#[method]invalid-path-error.error
+func wasmexport_InvalidPathErrorError(self0 uint32) (result *string) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	result_ := Exports.InvalidPathError.Error(self)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]invalid-path-error.get-err
+//export jcbhmr:mod/module@0.36.0#[method]invalid-path-error.get-err
+func wasmexport_InvalidPathErrorGetErr(self0 uint32) (result *Error) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	result_ := Exports.InvalidPathError.GetErr(self)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]invalid-path-error.get-kind
+//export jcbhmr:mod/module@0.36.0#[method]invalid-path-error.get-kind
+func wasmexport_InvalidPathErrorGetKind(self0 uint32) (result *string) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	result_ := Exports.InvalidPathError.GetKind(self)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]invalid-path-error.get-path
+//export jcbhmr:mod/module@0.36.0#[method]invalid-path-error.get-path
+func wasmexport_InvalidPathErrorGetPath(self0 uint32) (result *string) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	result_ := Exports.InvalidPathError.GetPath(self)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]invalid-path-error.set-kind
+//export jcbhmr:mod/module@0.36.0#[method]invalid-path-error.set-kind
+func wasmexport_InvalidPathErrorSetKind(self0 uint32, v0 *uint8, v1 uint32) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	Exports.InvalidPathError.SetKind(self, v)
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]invalid-path-error.set-path
+//export jcbhmr:mod/module@0.36.0#[method]invalid-path-error.set-path
+func wasmexport_InvalidPathErrorSetPath(self0 uint32, v0 *uint8, v1 uint32) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	Exports.InvalidPathError.SetPath(self, v)
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]invalid-path-error.unwrap
+//export jcbhmr:mod/module@0.36.0#[method]invalid-path-error.unwrap
+func wasmexport_InvalidPathErrorUnwrap(self0 uint32) (result *Error) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	result_ := Exports.InvalidPathError.Unwrap(self)
+	result = &result_
+	return
+}
+
+//go:wasmimport [export]jcbhmr:mod/module@0.36.0 [resource-new]invalid-version-error
+//go:noescape
+func wasmimport_InvalidVersionErrorResourceNew(rep0 uint32) (result0 uint32)
+
+//go:wasmimport [export]jcbhmr:mod/module@0.36.0 [resource-rep]invalid-version-error
+//go:noescape
+func wasmimport_InvalidVersionErrorResourceRep(self0 uint32) (result0 uint32)
+
+//go:wasmimport [export]jcbhmr:mod/module@0.36.0 [resource-drop]invalid-version-error
+//go:noescape
+func wasmimport_InvalidVersionErrorResourceDrop(self0 uint32)
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[dtor]invalid-version-error
+//export jcbhmr:mod/module@0.36.0#[dtor]invalid-version-error
+func wasmexport_InvalidVersionErrorDestructor(self0 uint32) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	Exports.InvalidVersionError.Destructor(self)
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[constructor]invalid-version-error
+//export jcbhmr:mod/module@0.36.0#[constructor]invalid-version-error
+func wasmexport_Constructor_() (result0 uint32) {
+	result := Exports.InvalidVersionError.ExportConstructor()
+	result0 = cm.Reinterpret[uint32](result)
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]invalid-version-error.error
+//export jcbhmr:mod/module@0.36.0#[method]invalid-version-error.error
+func wasmexport_InvalidVersionErrorError(self0 uint32) (result *string) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	result_ := Exports.InvalidVersionError.Error(self)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]invalid-version-error.get-err
+//export jcbhmr:mod/module@0.36.0#[method]invalid-version-error.get-err
+func wasmexport_InvalidVersionErrorGetErr(self0 uint32) (result *Error) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	result_ := Exports.InvalidVersionError.GetErr(self)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]invalid-version-error.get-pseudo
+//export jcbhmr:mod/module@0.36.0#[method]invalid-version-error.get-pseudo
+func wasmexport_InvalidVersionErrorGetPseudo(self0 uint32) (result0 uint32) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	result := Exports.InvalidVersionError.GetPseudo(self)
+	result0 = (uint32)(cm.BoolToU32(result))
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]invalid-version-error.get-version
+//export jcbhmr:mod/module@0.36.0#[method]invalid-version-error.get-version
+func wasmexport_InvalidVersionErrorGetVersion(self0 uint32) (result *string) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	result_ := Exports.InvalidVersionError.GetVersion(self)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]invalid-version-error.set-pseudo
+//export jcbhmr:mod/module@0.36.0#[method]invalid-version-error.set-pseudo
+func wasmexport_InvalidVersionErrorSetPseudo(self0 uint32, v0 uint32) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	v := (bool)(cm.U32ToBool((uint32)(v0)))
+	Exports.InvalidVersionError.SetPseudo(self, v)
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]invalid-version-error.set-version
+//export jcbhmr:mod/module@0.36.0#[method]invalid-version-error.set-version
+func wasmexport_InvalidVersionErrorSetVersion(self0 uint32, v0 *uint8, v1 uint32) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	Exports.InvalidVersionError.SetVersion(self, v)
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]invalid-version-error.unwrap
+//export jcbhmr:mod/module@0.36.0#[method]invalid-version-error.unwrap
+func wasmexport_InvalidVersionErrorUnwrap(self0 uint32) (result *Error) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	result_ := Exports.InvalidVersionError.Unwrap(self)
+	result = &result_
+	return
+}
+
+//go:wasmimport [export]jcbhmr:mod/module@0.36.0 [resource-new]module-error
+//go:noescape
+func wasmimport_ModuleErrorResourceNew(rep0 uint32) (result0 uint32)
+
+//go:wasmimport [export]jcbhmr:mod/module@0.36.0 [resource-rep]module-error
+//go:noescape
+func wasmimport_ModuleErrorResourceRep(self0 uint32) (result0 uint32)
+
+//go:wasmimport [export]jcbhmr:mod/module@0.36.0 [resource-drop]module-error
+//go:noescape
+func wasmimport_ModuleErrorResourceDrop(self0 uint32)
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[dtor]module-error
+//export jcbhmr:mod/module@0.36.0#[dtor]module-error
+func wasmexport_ModuleErrorDestructor(self0 uint32) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	Exports.ModuleError.Destructor(self)
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[constructor]module-error
+//export jcbhmr:mod/module@0.36.0#[constructor]module-error
+func wasmexport_Constructor__() (result0 uint32) {
+	result := Exports.ModuleError.ExportConstructor_()
+	result0 = cm.Reinterpret[uint32](result)
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]module-error.error
+//export jcbhmr:mod/module@0.36.0#[method]module-error.error
+func wasmexport_ModuleErrorError(self0 uint32) (result *string) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	result_ := Exports.ModuleError.Error(self)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]module-error.get-err
+//export jcbhmr:mod/module@0.36.0#[method]module-error.get-err
+func wasmexport_ModuleErrorGetErr(self0 uint32) (result *Error) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	result_ := Exports.ModuleError.GetErr(self)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]module-error.get-path
+//export jcbhmr:mod/module@0.36.0#[method]module-error.get-path
+func wasmexport_ModuleErrorGetPath(self0 uint32) (result *string) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	result_ := Exports.ModuleError.GetPath(self)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]module-error.get-version
+//export jcbhmr:mod/module@0.36.0#[method]module-error.get-version
+func wasmexport_ModuleErrorGetVersion(self0 uint32) (result *string) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	result_ := Exports.ModuleError.GetVersion(self)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]module-error.set-path
+//export jcbhmr:mod/module@0.36.0#[method]module-error.set-path
+func wasmexport_ModuleErrorSetPath(self0 uint32, v0 *uint8, v1 uint32) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	Exports.ModuleError.SetPath(self, v)
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]module-error.set-version
+//export jcbhmr:mod/module@0.36.0#[method]module-error.set-version
+func wasmexport_ModuleErrorSetVersion(self0 uint32, v0 *uint8, v1 uint32) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	Exports.ModuleError.SetVersion(self, v)
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#[method]module-error.unwrap
+//export jcbhmr:mod/module@0.36.0#[method]module-error.unwrap
+func wasmexport_ModuleErrorUnwrap(self0 uint32) (result *Error) {
+	self := cm.Reinterpret[cm.Rep]((uint32)(self0))
+	result_ := Exports.ModuleError.Unwrap(self)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#pseudo-version-timestamp-format
+//export jcbhmr:mod/module@0.36.0#pseudo-version-timestamp-format
+func wasmexport_PseudoVersionTimestampFormat(t0 uint64) (result *string) {
+	t := (int64)((uint64)(t0))
+	result_ := Exports.PseudoVersionTimestampFormat(t)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#canonical-version
+//export jcbhmr:mod/module@0.36.0#canonical-version
+func wasmexport_CanonicalVersion(v0 *uint8, v1 uint32) (result *string) {
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	result_ := Exports.CanonicalVersion(v)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#check
+//export jcbhmr:mod/module@0.36.0#check
+func wasmexport_Check(path0 *uint8, path1 uint32, version0 *uint8, version1 uint32) (result *Error) {
+	path := cm.LiftString[string]((*uint8)(path0), (uint32)(path1))
+	version := cm.LiftString[string]((*uint8)(version0), (uint32)(version1))
+	result_ := Exports.Check(path, version)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#check-file-path
+//export jcbhmr:mod/module@0.36.0#check-file-path
+func wasmexport_CheckFilePath(path0 *uint8, path1 uint32) (result *Error) {
+	path := cm.LiftString[string]((*uint8)(path0), (uint32)(path1))
+	result_ := Exports.CheckFilePath(path)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#check-import-path
+//export jcbhmr:mod/module@0.36.0#check-import-path
+func wasmexport_CheckImportPath(path0 *uint8, path1 uint32) (result *Error) {
+	path := cm.LiftString[string]((*uint8)(path0), (uint32)(path1))
+	result_ := Exports.CheckImportPath(path)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#check-path
+//export jcbhmr:mod/module@0.36.0#check-path
+func wasmexport_CheckPath(path0 *uint8, path1 uint32) (result *Error) {
+	path := cm.LiftString[string]((*uint8)(path0), (uint32)(path1))
+	result_ := Exports.CheckPath(path)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#check-path-major
+//export jcbhmr:mod/module@0.36.0#check-path-major
+func wasmexport_CheckPathMajor(v0 *uint8, v1 uint32, pathMajor0 *uint8, pathMajor1 uint32) (result *Error) {
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	pathMajor := cm.LiftString[string]((*uint8)(pathMajor0), (uint32)(pathMajor1))
+	result_ := Exports.CheckPathMajor(v, pathMajor)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#escape-path
+//export jcbhmr:mod/module@0.36.0#escape-path
+func wasmexport_EscapePath(path0 *uint8, path1 uint32) (result *cm.Result[string, string, Error]) {
+	path := cm.LiftString[string]((*uint8)(path0), (uint32)(path1))
+	result_ := Exports.EscapePath(path)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#escape-version
+//export jcbhmr:mod/module@0.36.0#escape-version
+func wasmexport_EscapeVersion(v0 *uint8, v1 uint32) (result *cm.Result[string, string, Error]) {
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	result_ := Exports.EscapeVersion(v)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#is-pseudo-version
+//export jcbhmr:mod/module@0.36.0#is-pseudo-version
+func wasmexport_IsPseudoVersion(v0 *uint8, v1 uint32) (result0 uint32) {
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	result := Exports.IsPseudoVersion(v)
+	result0 = (uint32)(cm.BoolToU32(result))
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#is-zero-pseudo-version
+//export jcbhmr:mod/module@0.36.0#is-zero-pseudo-version
+func wasmexport_IsZeroPseudoVersion(v0 *uint8, v1 uint32) (result0 uint32) {
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	result := Exports.IsZeroPseudoVersion(v)
+	result0 = (uint32)(cm.BoolToU32(result))
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#match-path-major
+//export jcbhmr:mod/module@0.36.0#match-path-major
+func wasmexport_MatchPathMajor(v0 *uint8, v1 uint32, pathMajor0 *uint8, pathMajor1 uint32) (result0 uint32) {
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	pathMajor := cm.LiftString[string]((*uint8)(pathMajor0), (uint32)(pathMajor1))
+	result := Exports.MatchPathMajor(v, pathMajor)
+	result0 = (uint32)(cm.BoolToU32(result))
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#match-prefix-patterns
+//export jcbhmr:mod/module@0.36.0#match-prefix-patterns
+func wasmexport_MatchPrefixPatterns(globs0 *uint8, globs1 uint32, target0 *uint8, target1 uint32) (result0 uint32) {
+	globs := cm.LiftString[string]((*uint8)(globs0), (uint32)(globs1))
+	target := cm.LiftString[string]((*uint8)(target0), (uint32)(target1))
+	result := Exports.MatchPrefixPatterns(globs, target)
+	result0 = (uint32)(cm.BoolToU32(result))
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#path-major-prefix
+//export jcbhmr:mod/module@0.36.0#path-major-prefix
+func wasmexport_PathMajorPrefix(pathMajor0 *uint8, pathMajor1 uint32) (result *string) {
+	pathMajor := cm.LiftString[string]((*uint8)(pathMajor0), (uint32)(pathMajor1))
+	result_ := Exports.PathMajorPrefix(pathMajor)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#pseudo-version
+//export jcbhmr:mod/module@0.36.0#pseudo-version
+func wasmexport_PseudoVersion(major0 *uint8, major1 uint32, older0 *uint8, older1 uint32, t0 uint64, rev0 *uint8, rev1 uint32) (result *string) {
+	major := cm.LiftString[string]((*uint8)(major0), (uint32)(major1))
+	older := cm.LiftString[string]((*uint8)(older0), (uint32)(older1))
+	t := (int64)((uint64)(t0))
+	rev := cm.LiftString[string]((*uint8)(rev0), (uint32)(rev1))
+	result_ := Exports.PseudoVersion(major, older, t, rev)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#pseudo-version-base
+//export jcbhmr:mod/module@0.36.0#pseudo-version-base
+func wasmexport_PseudoVersionBase(v0 *uint8, v1 uint32) (result *cm.Result[string, string, Error]) {
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	result_ := Exports.PseudoVersionBase(v)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#pseudo-version-rev
+//export jcbhmr:mod/module@0.36.0#pseudo-version-rev
+func wasmexport_PseudoVersionRev(v0 *uint8, v1 uint32) (result *cm.Result[string, string, Error]) {
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	result_ := Exports.PseudoVersionRev(v)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#pseudo-version-time
+//export jcbhmr:mod/module@0.36.0#pseudo-version-time
+func wasmexport_PseudoVersionTime(v0 *uint8, v1 uint32) (result *cm.Result[string, int64, Error]) {
+	v := cm.LiftString[string]((*uint8)(v0), (uint32)(v1))
+	result_ := Exports.PseudoVersionTime(v)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#sort
+//export jcbhmr:mod/module@0.36.0#sort
+func wasmexport_Sort(list0 *Version, list1 uint32) (result *cm.List[Version]) {
+	list := cm.LiftList[cm.List[Version]]((*Version)(list0), (uint32)(list1))
+	result_ := Exports.Sort(list)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#split-path-version
+//export jcbhmr:mod/module@0.36.0#split-path-version
+func wasmexport_SplitPathVersion(path0 *uint8, path1 uint32) (result *cm.Option[[2]string]) {
+	path := cm.LiftString[string]((*uint8)(path0), (uint32)(path1))
+	result_ := Exports.SplitPathVersion(path)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#unescape-path
+//export jcbhmr:mod/module@0.36.0#unescape-path
+func wasmexport_UnescapePath(escaped0 *uint8, escaped1 uint32) (result *cm.Result[string, string, Error]) {
+	escaped := cm.LiftString[string]((*uint8)(escaped0), (uint32)(escaped1))
+	result_ := Exports.UnescapePath(escaped)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#unescape-version
+//export jcbhmr:mod/module@0.36.0#unescape-version
+func wasmexport_UnescapeVersion(escaped0 *uint8, escaped1 uint32) (result *cm.Result[string, string, Error]) {
+	escaped := cm.LiftString[string]((*uint8)(escaped0), (uint32)(escaped1))
+	result_ := Exports.UnescapeVersion(escaped)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#version-error
+//export jcbhmr:mod/module@0.36.0#version-error
+func wasmexport_VersionError(v0 *uint8, v1 uint32, v2 *uint8, v3 uint32, err0 *uint8, err1 uint32) (result *Error) {
+	v := lift_Version((*uint8)(v0), (uint32)(v1), (*uint8)(v2), (uint32)(v3))
+	err := cm.LiftString[Error]((*uint8)(err0), (uint32)(err1))
+	result_ := Exports.VersionError(v, err)
+	result = &result_
+	return
+}
+
+//go:wasmexport jcbhmr:mod/module@0.36.0#zero-pseudo-version
+//export jcbhmr:mod/module@0.36.0#zero-pseudo-version
+func wasmexport_ZeroPseudoVersion(major0 *uint8, major1 uint32) (result *string) {
+	major := cm.LiftString[string]((*uint8)(major0), (uint32)(major1))
+	result_ := Exports.ZeroPseudoVersion(major)
+	result = &result_
+	return
+}
 
 //go:wasmexport jcbhmr:mod/module@0.36.0#version-string
 //export jcbhmr:mod/module@0.36.0#version-string

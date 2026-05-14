@@ -14,11 +14,7 @@ var TargetArg string
 
 func Parse() {
 	flag.Parse()
-	if flag.NArg() < 1 {
-		TargetArg = "..."
-	} else {
-		TargetArg = flag.Arg(1)
-	}
+	TargetArg = flag.Arg(0)
 }
 
 var Targets = map[string]func() error{
@@ -78,7 +74,7 @@ func BuildGosumcheck() error {
 
 func main() {
 	Parse()
-	if TargetArg == "..." {
+	if TargetArg == "" {
 		for _, build := range Targets {
 			err := build()
 			if err != nil {
