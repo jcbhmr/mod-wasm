@@ -1,3 +1,0 @@
-[submodule "mod"]
-	path = mod
-	url = https://go.googlesource.com/mod
