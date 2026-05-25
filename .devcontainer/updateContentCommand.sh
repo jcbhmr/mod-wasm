@@ -10,12 +10,5 @@ sudo dpkg --install "tinygo_${tinygo_version}_amd64.deb"
 popd
 rm -rf "$temp_dir_path"
 
-echo "# Install 'cargo binstall'"
-curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-source ~/.bashrc
-
-echo "# Install 'wkg' and 'wasm-tools'"
-cargo binstall --no-confirm wkg wasm-tools
-
 echo "# Install Wasmtime"
 curl https://wasmtime.dev/install.sh -sSf | bash

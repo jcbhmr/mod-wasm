@@ -3,6 +3,8 @@ package main_test
 import (
 	"bytes"
 	"errors"
+	"flag"
+	"fmt"
 	"log"
 	"os"
 	"os/exec"
@@ -10,13 +12,22 @@ import (
 	"testing"
 )
 
+var build bool
+
+func init() {
+	flag.BoolVar(&build, "build", true, "run build step")
+}
+
 func TestMain(m *testing.M) {
-	cmd := exec.Command("go", "tool", "build")
-	cmd.Stdout = log.Writer()
-	cmd.Stderr = log.Writer()
-	err := cmd.Run()
-	if err != nil {
-		log.Fatal(err)
+	flag.Parse()
+	if build {
+		cmd := exec.Command("go", "tool", "build")
+		cmd.Stdout = log.Writer()
+		cmd.Stderr = log.Writer()
+		err := cmd.Run()
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 	os.Exit(m.Run())
 }
@@ -38,9 +49,11 @@ var WasmtimeAllowAllArgs = []string{
 
 func WasmtimeInvoke(path string, expression string) (string, error) {
 	cmd := exec.Command("wasmtime", append(slices.Clone(WasmtimeAllowAllArgs), "--invoke", expression, path)...)
+	stderr := &bytes.Buffer{}
+	cmd.Stderr = stderr
 	out, err := cmd.Output()
 	if err != nil {
-		return "", err
+		return "", fmt.Errorf("%v failed: %w\n%s", cmd, err, stderr)
 	}
 	if bytes.HasSuffix(out, []byte("\n")) {
 		out = out[:len(out)-1]
@@ -57,7 +70,7 @@ func Wasmtime(path string, args ...string) *exec.Cmd {
 
 func TestBuild(t *testing.T) {
 	input := `build("v1.2.3-rc4+5.6.7")`
-	output, err := WasmtimeInvoke("./mod-wasm.wasm", input)
+	output, err := WasmtimeInvoke("./mod.wasm", input)
 	if err != nil {
 		t.Error(err)
 	} else {

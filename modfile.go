@@ -3,18 +3,18 @@
 package main
 
 import (
-	modfilewasm "go.jcbhmr.com.internal/mod-wasm/internal/wit-bindgen-go/jcbhmr/mod/modfile"
+	modfilewit "go.jcbhmr.com.internal/mod-wasm/internal/jcbhmr/mod/modfile"
 	"golang.org/x/mod/modfile"
 )
 
 func init() {
-	modfilewasm.Exports.GetGoVersionRE = func() {
+	modfilewit.Exports.GetGoVersionRE = func() {
 		_ = modfile.GoVersionRE
 	}
-	modfilewasm.Exports.GetToolchainRE = func() {
+	modfilewit.Exports.GetToolchainRE = func() {
 		_ = modfile.ToolchainRE
 	}
-	modfilewasm.Exports.AutoQuote = func(s string) string {
+	modfilewit.Exports.AutoQuote = func(s string) string {
 		return modfile.AutoQuote(s)
 	}
 }

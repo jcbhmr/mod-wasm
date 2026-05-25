@@ -6,8 +6,8 @@ toolchain go1.26.2
 
 tool (
 	go.bytecodealliance.org/cmd/wit-bindgen-go
-	go.jcbhmr.com.internal/mod-wasm/scripts/build
-	go.jcbhmr.com.internal/mod-wasm/scripts/rm-rf
+	go.jcbhmr.com.internal/mod-wasm/internal/cmd/build
+	go.jcbhmr.com/wasmpkgtools/cmd/wkg
 )
 
 require (
@@ -26,5 +26,7 @@ require (
 	github.com/ulikunitz/xz v0.5.12 // indirect
 	github.com/urfave/cli/v3 v3.3.3 // indirect
 	go.bytecodealliance.org v0.7.0 // indirect
-	golang.org/x/sys v0.33.0 // indirect
+	go.jcbhmr.com/crossexec v1.1.1 // indirect
+	go.jcbhmr.com/wasmpkgtools v0.15.1-0.20260524070841-580d2f50203b // indirect
+	golang.org/x/sys v0.44.0 // indirect
 )
