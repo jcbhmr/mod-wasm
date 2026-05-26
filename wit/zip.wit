@@ -1,0 +1,36 @@
+package jcbhmr:mod@0.36.0;
+
+interface zip {
+    use module.{version};
+    type error = string;
+    get-max-zip-file: func() -> s64;
+    get-max-go-mod: func() -> s64;
+    get-max-license: func() -> s64;
+    create: func(w: string, m: version, files: list<file>) -> result<_, error>;
+    create-from-dir: func(w: string, m: version, dir: string) -> result<_, error>;
+    create-from-VCS: func(w: string, m: version, repo-root: string, revision: string, subdir: string) -> result<_, error>;
+    unzip: func(dir: string, m: version, zip-file: string) -> result<_, error>;
+    record checked-files {
+        valid: list<string>,
+        omitted: list<file-error>,
+        invalid: list<file-error>,
+        size-error: option<error>,
+    }
+    check-dir: func(dir: string) -> tuple<checked-files, option<error>>;
+    check-files: func(files: list<file>) -> tuple<checked-files, option<error>>;
+    check-zip: func(m: version, zip-file: string) -> tuple<checked-files, option<error>>;
+    checked-files-err: func(self: checked-files) -> option<error>;
+    type file = string;
+    record file-error {
+        path: string,
+        err: option<error>,
+    }
+    file-error-error: func(self: file-error) -> string;
+    file-error-unwrap: func(self: file-error) -> option<error>;
+    type file-error-list = list<file-error>;
+    file-error-list-error: func(self: file-error-list) -> string;
+    record unrecognized-VCS-error {
+        repo-root: string,
+    }
+    unrecognized-VCS-error-error: func(self: unrecognized-VCS-error) -> string;
+}

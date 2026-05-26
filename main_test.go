@@ -9,6 +9,7 @@ import (
 	"os"
 	"os/exec"
 	"slices"
+	"strconv"
 	"testing"
 )
 
@@ -78,6 +79,16 @@ func TestBuild(t *testing.T) {
 		if got, want := output, `"+5.6.7"`; got != want {
 			t.Errorf("%s: got=%v, want=%v", input, got, want)
 		}
+	}
+}
+
+func TestCheckDir(t *testing.T) {
+	input := `check-dir(`+strconv.Quote(t.TempDir())+`)`
+	output, err := WasmtimeInvoke("./mod.wasm", input)
+	if err != nil {
+		t.Error(err)
+	} else {
+		t.Logf("%v=%v", input, output)
 	}
 }
 

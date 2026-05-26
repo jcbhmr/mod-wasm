@@ -3,6 +3,6 @@ package jcbhmr:mod@0.36.0;
 interface modfile {
     get-go-version-RE: func();
     get-toolchain-RE: func();
-
     auto-quote: func(s: string) -> string;
+    // TODO
 }
